@@ -32,9 +32,4 @@ cp $LIBRARY_PATH/libopenssl.a $TARGET_LIBRARY_PATH/
 cp $LIBRARY_PATH/libuv.a $TARGET_LIBRARY_PATH/
 cp $LIBRARY_PATH/libzlib.a $TARGET_LIBRARY_PATH/
 
-make clean
-
-TARGET_LIBRARY_PATH='tools/ios-framework/bin/x64'
-
-./configure --dest-os=ios --dest-cpu=x64 --without-chakra-jit --with-intl=none --openssl-no-asm
-make -j$(getconf _NPROCESSORS_ONLN)
+cd "$ROOT"
